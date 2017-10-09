@@ -2,6 +2,7 @@
 using System.IO;
 using System.Configuration;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Sudoko
 {
@@ -28,7 +29,7 @@ namespace Sudoko
             string[] lines = File.ReadAllLines(this.InputFilePath);
             foreach(string line in lines)
             {
-                string[] tokens = line.Split(' ');
+                string[] tokens = line.Split(' ').Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
                 int[] row = new int[tokens.Length];
                 for (int i = 0; i < tokens.Length; i ++)
                 {

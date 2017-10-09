@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cell.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="ISudokoScanner.cs" />
     <Compile Include="Program.cs" />
@@ -53,5 +54,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Input1.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="$(ProjectDir)Input1.txt" DestinationFolder="$(TargetDir)" ContinueOnError="true" />
+  </Target>
 </Project>
