@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="ConsoleSudokoPrinter.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="ISudokoPrinter.cs" />
     <Compile Include="ISudokoScanner.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,9 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Input1.txt" />
+    <Content Include="Input2.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
     <Copy SourceFiles="$(ProjectDir)Input1.txt" DestinationFolder="$(TargetDir)" ContinueOnError="true" />
+    <Copy SourceFiles="$(ProjectDir)Input2.txt" DestinationFolder="$(TargetDir)" ContinueOnError="true" />
   </Target>
 </Project>

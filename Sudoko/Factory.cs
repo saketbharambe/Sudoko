@@ -18,5 +18,10 @@ namespace Sudoko
 
             return null;
         }
+
+        internal static ISudokoPrinter GetISudokoPrinter()
+        {
+            return new ConsoleSudokoPrinter();
+        }
     }
 }

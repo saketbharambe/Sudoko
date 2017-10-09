@@ -12,7 +12,7 @@ namespace Sudoko
         /// <summary>
         /// Data of the sudoko.
         /// </summary>
-        int[][] Data = null;
+        private int[][] Data = null;
 
         /// <summary>
         /// Candidates for each cell.
@@ -45,9 +45,15 @@ namespace Sudoko
             Validate();
         }
 
-        internal void Solve()
+        internal int[][] GetSolution()
         {
-            while (IsCompleted())
+            Solve();
+            return this.Data;
+        }
+
+        private void Solve()
+        {
+            while (!IsCompleted())
             {
                 ScratchCandidates();
                 ConsolidateCells();

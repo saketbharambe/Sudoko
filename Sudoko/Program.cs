@@ -13,6 +13,8 @@ namespace Sudoko
             Sudoko sudoko = new Sudoko();
             ISudokoScanner sudokoScanner = Factory.GetISudokoScanner();
             sudoko.Initialize(sudokoScanner.GetInitialPuzzle());
+            ISudokoPrinter sudokoPrinter = Factory.GetISudokoPrinter();
+            sudokoPrinter.PrintSudoko(sudoko.GetSolution());
         }
     }
 }
